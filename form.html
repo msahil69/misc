@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fragment Mono', sans-serif;
+            background-color: #f2a592;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 900px;
+            max-height: 90vh;
+            overflow-y: auto
+        }
+        h2 {
+            color: #f7945e;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .button-container button {
+            background-color: #f7945e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button-container button:hover {
+            background-color: #e6835c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="form-container">
+        <div id="page1">
+            <h2>Hello!</h2>
+            <form>
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="city">City</label>
+                <input type="text" id="city" name="city">
+
+                <label for="state">State</label>
+                <input type="text" id="state" name="state">
+
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country">
+
+                <label for="pincode">Pincode</label>
+                <input type="text" id="pincode" name="pincode">
+
+                <label for="role">Role</label>
+                <select id="role" name="role" required>
+                    <option value="" disabled selected>Select category</option>
+                    <option value="Seeker">Seeker</option>
+                    <option value="Provider">Provider</option>
+                </select>
+
+                <label for="isLGBTQFriendly">LGBTQ Friendly</label>
+                <input type="checkbox" id="isLGBTQFriendly" name="isLGBTQFriendly" >
+
+                <div class="button-container">
+                    <button type="button" onclick="showPage2()">Next</button>
+                </div>
+            </form>
+        </div>
+        <div id="page2" style="display:none;">
+            <h2>Property Details</h2>
+            <form>
+                <label for="property-title">Title</label>
+                <input type="text" id="property-title" name="title" required>
+        
+                <label for="property-address">Property Address</label>
+                <textarea id="property-address" name="address" rows="2" required></textarea>
+        
+                <label for="property-city">City</label>
+                <input type="text" id="property-city" name="city" required>
+        
+                <label for="property-state">State</label>
+                <input type="text" id="property-state" name="state" required>
+        
+                <label for="property-description">Description</label>
+                <textarea id="property-description" name="description" rows="4" required></textarea>
+        
+                <label for="property-price">Price</label>
+                <input type="number" id="property-price" name="price" required>
+        
+                <label for="property-image">Image</label>
+                <input type="file" id="property-image" name="image" accept="image/*" required>
+        
+                <label for="property-category">Category</label>
+                <select id="property-category" name="category" required>
+                    <option value="" disabled selected>Select category</option>
+                    <option value="Rental">Rental</option>
+                    <option value="Roomate">Roomate</option>
+                    <option value="PG">PG</option>
+                </select>
+        
+                <label for="property-beds">Beds</label>
+                <input type="number" id="property-beds" name="beds" required>
+        
+                <label for="property-baths">Baths</label>
+                <input type="number" id="property-baths" name="baths" required>
+        
+                <label for="property-balcony">Balcony</label>
+                <input type="number" id="property-balcony" name="balcony" value="0">
+        
+                <label for="super-built-area">Super Built Area</label>
+                <input type="number" id="super-built-area" name="superBuiltArea" required>
+        
+                <label for="additional-rooms">Additional Rooms</label>
+                <input type="text" id="additional-rooms" name="additionalRooms">
+        
+                <label for="floor">Floor</label>
+                <input type="number" id="floor" name="floor" required>
+        
+                <label for="total-floors">Total Floors</label>
+                <input type="number" id="total-floors" name="totalFloors" required>
+        
+                <label for="property-parking">Parking</label>
+                <input type="text" id="property-parking" name="parking" required>
+        
+                <label for="furnished">Furnished</label>
+                <select id="furnished" name="furnished" required>
+                    <option value="" disabled selected>Select furnishing status</option>
+                    <option value="Fully Furnished">Fully Furnished</option>
+                    <option value="Semi Furnished">Semi Furnished</option>
+                    <option value="Unfurnished">Unfurnished</option>
+                </select>
+        
+                <label for="maintenance">Maintenance</label>
+                <input type="number" id="maintenance" name="maintenance" required>
+        
+                <label for="age-of-construction">Age of Construction</label>
+                <input type="text" id="age-of-construction" name="ageOfConstruction" required>
+        
+                <label for="facing">Facing</label>
+                <input type="text" id="facing" name="facing" required>
+        
+                <label for="status">Status</label>
+                <input type="text" id="status" name="status" required>
+        
+                <label for="visitor-parking">Visitor Parking</label>
+                <input type="checkbox" id="visitor-parking" name="visitorParking">
+        
+                <label for="park">Park</label>
+                <input type="checkbox" id="park" name="park">
+        
+                <label for="water-storage">Water Storage</label>
+                <input type="checkbox" id="water-storage" name="waterStorage">
+        
+                <label for="friendly-neighborhood">Friendly Neighborhood</label>
+                <input type="checkbox" id="friendly-neighborhood" name="friendlyNeighborhood">
+        
+                <label for="owner-name">Owner's Name</label>
+                <input type="text" id="owner-name" name="ownerName" required>
+        
+                <label for="owner-contact">Owner's Contact</label>
+                <input type="text" id="owner-contact" name="ownerContact" required>
+        
+                <label for="is-lgbtq-friendly">LGBTQ Friendly</label>
+                <input type="checkbox" id="is-lgbtq-friendly" name="isLGBTQFriendly" >
+        
+                <div class="button-container">
+                    <button type="button" onclick="showPage1()">Back</button>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>        
+    </div>
+    <script>
+        function showPage2() {
+            const container = document.getElementById('form-container');
+            const page1 = document.getElementById('page1');
+            const page2 = document.getElementById('page2');
+            page1.style.display = 'none';
+            page2.style.display = 'block';
+        }
+
+        function showPage1() {
+            const container = document.getElementById('form-container');
+            const page1 = document.getElementById('page1');
+            const page2 = document.getElementById('page2');
+            page2.style.display = 'none';
+            page1.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
